@@ -419,8 +419,8 @@ Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 
 // random shit
-Q.young_plan_signatures = 0;
-Q.anti_young = 0;
+// Q.young_plan_signatures = 0;
+// Q.anti_young = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
