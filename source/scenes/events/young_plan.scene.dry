@@ -48,7 +48,7 @@ The referendum easily fails with or without our presence in the campaign, with o
 
 @anti_plan
 subtitle: Huh?
-on-arrival: coalition_dissent += 2; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 15; labor_dissent += 5; left_dissent += 5; center_dissent += 5; reformist_dissent += 20; pro_republic -= 10; workers_spd -= 10; new_middle_spd -= 10; old_middle_spd -= 10; rural_dvp -= 5; anti_young = 1
+on-arrival: coalition_dissent += 2; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 15; labor_dissent += 5; left_dissent += 5; center_dissent += 5; reformist_dissent += 20; pro_republic -= 10; workers_spd -= 10; new_middle_spd -= 10; old_middle_spd -= 10; rural_dvp -= 5;
 #go-to: recalculate
 
 Our coalition partners and voters are very confused at this turn of action as it goes against everything we have stood for. The KPD quickly makes campaign fodder out of our apparent change of heart.
