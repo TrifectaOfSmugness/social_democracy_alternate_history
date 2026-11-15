@@ -461,6 +461,21 @@ if (Q.month_actions >= 1) {
         }
     }
 }
+
+if (Q.year == 1929 && Q.month == 7) {
+    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} 
+if (Q.year == 1929 && Q.month == 12) {
+    Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
+}
+
+if (Q.young_plan_votes && !Q.in_grand_coalition && !Q.spd_toleration && !Q.in_right_coalition && !Q.in_center_right_coalition) {
+    Q.young_plan_votes += (Q.dvp_votes / 10);
+    Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
+}
+
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];
