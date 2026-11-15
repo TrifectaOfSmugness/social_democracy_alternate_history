@@ -61,3 +61,14 @@ if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 1) {
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } 
 !}
+go-to: no_ref if young_plan_signatures < 10; yes_ref if young_plan_signatures >= 10;
+
+@no_ref
+on-arrival: pro_republic += 3;
+
+As expected, the initiative has failed to gather enough signatures for it to proceed to a referendum, with only [+ young_plan_signatures +]% of eligible voters signing it. This is a small humiliation to the far-right and especially the DNVP.
+
+@yes_ref
+on-arrival: pro_republic -= 3 if young_plan_signatures > 12;
+
+Surprisingly, the initiative has [? if young_plan_signatures < 11 :barely?] garnered enough signatures to surpass the 10% requirement, allowing it to proceed to a referendum. While there is no chance of it actually passing, it is still a minor bane to the republic as the far right continues making their rounds denouncing the republic.
