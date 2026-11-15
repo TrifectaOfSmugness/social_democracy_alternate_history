@@ -46,14 +46,17 @@ The referendum easily fails with or without our presence in the campaign, with o
 
 @anti_plan
 subtitle: Huh?
-on-arrival: coalition_dissent += 2; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 15; labor_dissent += 5; left_dissent += 5; center_dissent += 5; reformist_dissent += 20; pro_republic -= 10; workers_spd -= 10; new_middle_spd -= 10; old_middle_spd -= 10; rural_dvp -= 5;
+on-arrival: coalition_dissent += 2; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 15; labor_dissent += 5; left_dissent += 5; center_dissent += 5; reformist_dissent += 20; pro_republic -= 30; workers_spd -= 10; new_middle_spd -= 10; old_middle_spd -= 10; rural_dvp -= 5; anti_young += 1;
 go-to: recalculate
 
 Our coalition partners and voters are very confused at this turn of action as it goes against everything we have stood for. The KPD quickly makes campaign fodder out of our apparent change of heart.
 
 @recalculate
 on-arrival: {!
-if (Q.year == 1929 && Q.month == 7) {
+if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 1) {
+    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.spd_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} else if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 0) {
     Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } 
