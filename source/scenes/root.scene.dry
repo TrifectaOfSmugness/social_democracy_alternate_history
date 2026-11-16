@@ -559,6 +559,9 @@ Q.hindenburg_dismissal_timer = 0;
 Q.young_plan_signatures = 0;
 Q.young_plan_votes = 0;
 Q.anti_young = 0;
+Q.internationalism = 0;
+Q.rational = 0;
+Q.nothing = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
