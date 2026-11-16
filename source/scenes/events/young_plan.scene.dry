@@ -4,7 +4,6 @@ subtitle: A new agreement on reparations
 tags: event
 view-if: year = 1929 and month >= 7 and in_right_coalition = 0 and young_plan_seen = 0
 on-arrival: young_plan_seen = 1; 
-# Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100)
 max-visits: 1
 
 = Young Plan
@@ -61,7 +60,6 @@ if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 1) {
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } 
 !}
-
 go-to: no_ref 
 # if young_plan_signatures < 10; yes_ref if young_plan_signatures >= 10;
 
