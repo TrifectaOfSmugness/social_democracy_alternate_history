@@ -65,7 +65,7 @@ go-to: yes_ref if young_plan_signatures >= 10; no_ref if young_plan_signatures <
 @yes_ref
 on-arrival: pro_republic -= 3 if young_plan_signatures > 12;
 
-Surprisingly, the initiative has garnered enough signatures to surpass the 10% requirement, allowing it to proceed to a referendum. While there is no chance of it actually passing, it is still a minor bane to the republic as the far right continues making their rounds denouncing the republic.
+Surprisingly, the initiative has gathered the signatures of [+ young_plan_signatures +]% of eligible voters, [? if young_plan_signatures < 11:barely?] enough signatures to surpass the 10% requirement, allowing it to proceed to a referendum. While there is no chance of it actually passing, it is still a minor bane to the republic as the far right continues making their rounds denouncing the republic.
 
 @no_ref
 on-arrival: pro_republic += 3;
