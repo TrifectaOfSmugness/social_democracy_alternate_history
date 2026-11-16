@@ -62,8 +62,6 @@ if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 1) {
 } 
 !}
 
-test
-
 go-to: no_ref 
 # if young_plan_signatures < 10; yes_ref if young_plan_signatures >= 10;
 
