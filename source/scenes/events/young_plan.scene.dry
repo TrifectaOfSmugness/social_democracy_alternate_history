@@ -24,24 +24,23 @@ How should we campaign in favor of the Plan?
 - @rational: The Young Plan is simply the most rational choice for Germany.
 
 @internationalism
-on-arrival: nationalism -= 5*(1-dissent) if pacifism >= 2 else nationalism += 3; pacifism += 1; workers_spd += 5*(1-dissent) if pacifism >= 3 and nationalism <= 50; workers_nsdap += 4 if pacifism <= 3; rural_nsdap += 5; catholics_spd -= 4 if pacifism <= 3; rural_dvp -= 4
+on-arrival: nationalism -= 5*(1-dissent) if pacifism >= 2 else nationalism += 3; pacifism += 1; workers_spd += 5*(1-dissent) if pacifism >= 3 and nationalism <= 50; workers_nsdap += 4 if pacifism <= 3; rural_nsdap += 5; catholics_spd -= 4 if pacifism <= 3; rural_dvp -= 4; internationalism += 1;
 go-to: recalculate
 
-We rail hard against nationalism and in favor of pacifism and belonging to the international community of nations. The referendum easily fails, with only around 15% of voters supporting it. It seems that nationalism is not omnipotent in Germany, despite everything. [? if pacifism >= 3 and nationalism <= 50 : We have rallied the workers to the cause of internationalism. ?]
+We rail hard against nationalism and in favor of pacifism and belonging to the international community of nations. [? if pacifism >= 3 and nationalism <= 50 : We have rallied the workers to the cause of internationalism. ?]
 
 
 @rational
-on-arrival: nationalism += 5; workers_nsdap += 4; rural_nsdap += 5; catholics_spd -= 4; workers_spd -= 3; rural_dvp -= 5
+on-arrival: nationalism += 5; workers_nsdap += 4; rural_nsdap += 5; catholics_spd -= 4; workers_spd -= 3; rural_dvp -= 5; rational += 1;
 go-to: recalculate
 
-The referendum easily fails, with only around 15% of voters supporting it. It seems that the German people have a sense of rationality, after all.
-
+We argue that the Young Plan is simply the most rational choice for Germany. Although it doesn't advance any broader political objectives, most people can get behind economic stability and recovery.
 
 @no_plan
-on-arrival: nationalism += 5; workers_spd -= 3; old_middle_spd -= 3; new_middle_spd -= 3; pacifism -= 1; workers_nsdap += 5; rural_nsdap += 5; rural_dnvp -= 5; catholics_spd -= 5; rural_dvp -= 5;
+on-arrival: nationalism += 5; workers_spd -= 3; old_middle_spd -= 3; new_middle_spd -= 3; pacifism -= 1; workers_nsdap += 5; rural_nsdap += 5; rural_dnvp -= 5; catholics_spd -= 5; rural_dvp -= 5; nothing += 1
 go-to: recalculate
 
-The referendum easily fails with or without our presence in the campaign, with only around 15% of voters supporting it. However, nationalist sentiment is inflammed, and the right-wing parties are using our silence around the Plan as a tacit admission of its faults. Our silence has only emboldened the Right, especially the NSDAP.
+The referendum is easily going to fail with or without our presence in the campaign. However, nationalist sentiment is inflammed, and the right-wing parties are using our silence around the Plan as a tacit admission of its faults. Our silence has only emboldened the Right, especially the NSDAP.
 
 @anti_plan
 subtitle: Huh?
@@ -65,9 +64,9 @@ go-to: yes_ref if young_plan_signatures >= 10; no_ref if young_plan_signatures <
 @yes_ref
 on-arrival: pro_republic -= 3 if young_plan_signatures > 12;
 
-Surprisingly, the initiative has gathered the signatures of [+ young_plan_signatures +]% of eligible voters, [? if young_plan_signatures < 11:barely?] enough signatures to surpass the 10% requirement, allowing it to proceed to a referendum. While there is no chance of it actually passing, it is still a minor bane to the republic as the far right continues making their rounds denouncing the republic.
+Surprisingly, [? if nothing == 1:in spite of our expectations?], the initiative has gathered the signatures of [+ young_plan_signatures +]% of eligible voters, [? if young_plan_signatures < 11:barely?] enough signatures to surpass the 10% requirement, allowing it to proceed to a referendum. While there is no chance of it actually passing, it is still a minor bane to the republic as the far right continues making their rounds denouncing the republic.
 
 @no_ref
 on-arrival: pro_republic += 3;
 
-As expected, the initiative has failed to gather enough signatures for it to proceed to a referendum, with only [+ young_plan_signatures +]% of eligible voters signing it. This is a small humiliation to the far-right and especially the DNVP.
+As expected, the initiative has failed to gather enough signatures for it to proceed to a referendum, with only [+ young_plan_signatures +]% of eligible voters signing it. This is a small humiliation to the far-right and especially the DNVP. [? if internationalism == 1: It seems that nationalism is not omnipotent in Germany, despite everything.?][? if rational == 1: It seems that the German people have a sense of rationality, after all.?][? if anti_young == 1: It seems that our voters has refused to heed our calls after all, and our support of the initiative has only made us look foolish.?]
