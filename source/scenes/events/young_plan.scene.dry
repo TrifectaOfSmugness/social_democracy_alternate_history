@@ -61,6 +61,9 @@ if (Q.year == 1929 && Q.month == 7 && Q.anti_young == 1) {
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } 
 !}
+
+test
+
 # go-to: no_ref if young_plan_signatures < 10; yes_ref if young_plan_signatures >= 10;
 
 # @no_ref
